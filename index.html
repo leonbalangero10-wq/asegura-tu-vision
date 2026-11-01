@@ -323,7 +323,6 @@ footer .wrap { padding-block: 22px 30px; font-size: 13px; color: var(--muted); d
           <span class="lbl">Costo mensual</span>
           <span class="big"><span id="cuota">$0</span> <small>/ mes</small></span>
           <span class="meta" id="meta"></span>
-          <span class="tier" id="tier"></span>
         </div>
         <div class="cover">
           <h3>Qué incluye tu cobertura</h3>
@@ -484,7 +483,6 @@ function render() {
   const tasa = cuota / suma;
   $("cuota").textContent = fmt(cuota);
   $("meta").textContent = tipo + " · Suma asegurada " + fmt(suma);
-  $("tier").textContent = "Tasa efectiva " + (tasa * 100).toLocaleString("es-AR", { maximumFractionDigits: 2 }) + " %";
 
   const pct = (suma - CONFIG.sumaMin) / (CONFIG.sumaMax - CONFIG.sumaMin) * 100;
   slider.style.setProperty("--pct", pct + "%");
